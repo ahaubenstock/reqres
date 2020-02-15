@@ -3,18 +3,42 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2B18571D23F8240500ECEC61 /* UserListScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B18571C23F8240500ECEC61 /* UserListScreen.swift */; };
+		2B18572023F8241000ECEC61 /* UserListComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B18571E23F8241000ECEC61 /* UserListComponent.swift */; };
+		2B18572123F8241000ECEC61 /* UserListComponent.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2B18571F23F8241000ECEC61 /* UserListComponent.storyboard */; };
+		2B18572423F829FF00ECEC61 /* UserComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B18572223F829FF00ECEC61 /* UserComponent.swift */; };
+		2B18572523F829FF00ECEC61 /* UserComponent.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2B18572323F829FF00ECEC61 /* UserComponent.storyboard */; };
+		2B18572723F82A0800ECEC61 /* UserScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B18572623F82A0800ECEC61 /* UserScreen.swift */; };
+		2B18572B23F84B1800ECEC61 /* UIImagePickerController+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B18572A23F84B1800ECEC61 /* UIImagePickerController+Rx.swift */; };
+		2B18572D23F85FE300ECEC61 /* Endpoint+GetUsers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B18572C23F85FE300ECEC61 /* Endpoint+GetUsers.swift */; };
+		2B80C4DC23F79F9200A0FCBA /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B80C4DB23F79F9200A0FCBA /* Storage.swift */; };
 		2BAD032623F756570016D706 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BAD032523F756570016D706 /* AppDelegate.swift */; };
-		2BAD032823F756570016D706 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BAD032723F756570016D706 /* SceneDelegate.swift */; };
-		2BAD032A23F756570016D706 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BAD032923F756570016D706 /* ViewController.swift */; };
-		2BAD032D23F756570016D706 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2BAD032B23F756570016D706 /* Main.storyboard */; };
 		2BAD032F23F756580016D706 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2BAD032E23F756580016D706 /* Assets.xcassets */; };
 		2BAD033223F756580016D706 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2BAD033023F756580016D706 /* LaunchScreen.storyboard */; };
 		2BAD033D23F756590016D706 /* reqresTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BAD033C23F756590016D706 /* reqresTests.swift */; };
 		2BAD034823F756590016D706 /* reqresUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BAD034723F756590016D706 /* reqresUITests.swift */; };
+		2BAD035623F757F90016D706 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2BAD035523F757F90016D706 /* Colors.xcassets */; };
+		2BAD035C23F759CF0016D706 /* Routing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BAD035A23F759CF0016D706 /* Routing.swift */; };
+		2BAD035D23F759CF0016D706 /* Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BAD035B23F759CF0016D706 /* Screen.swift */; };
+		2BAD036023F759F60016D706 /* LoginComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BAD035E23F759F60016D706 /* LoginComponent.swift */; };
+		2BAD036123F759F60016D706 /* LoginComponent.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2BAD035F23F759F60016D706 /* LoginComponent.storyboard */; };
+		2BAD036323F760810016D706 /* LoginScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BAD036223F760810016D706 /* LoginScreen.swift */; };
+		2BAD036523F7610E0016D706 /* StorageProperty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BAD036423F7610E0016D706 /* StorageProperty.swift */; };
+		2BAD036823F7612B0016D706 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BAD036723F7612B0016D706 /* User.swift */; };
+		2BAD036D23F7684D0016D706 /* SignUpComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BAD036B23F7684D0016D706 /* SignUpComponent.swift */; };
+		2BAD036E23F7684D0016D706 /* SignUpComponent.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2BAD036C23F7684D0016D706 /* SignUpComponent.storyboard */; };
+		2BAD037023F76BEC0016D706 /* SignUpScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BAD036F23F76BEC0016D706 /* SignUpScreen.swift */; };
+		2BAD037823F76E580016D706 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BAD037723F76E580016D706 /* Response.swift */; };
+		2BAD037E23F76F190016D706 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BAD037D23F76F190016D706 /* Endpoint.swift */; };
+		2BAD038323F770970016D706 /* Endpoint+Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BAD038223F770970016D706 /* Endpoint+Login.swift */; };
+		2BAD038523F773E40016D706 /* Endpoint+SignUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BAD038423F773E40016D706 /* Endpoint+SignUp.swift */; };
+		2BAD038823F7754E0016D706 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BAD038723F7754E0016D706 /* Alert.swift */; };
+		2BAD038A23F776F00016D706 /* TopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BAD038923F776F00016D706 /* TopViewController.swift */; };
+		2BAD038C23F779310016D706 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BAD038B23F779310016D706 /* Session.swift */; };
 		5083F71FCBD13F52B248C773 /* Pods_reqresTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0317A0942AF53CAD6CE819C /* Pods_reqresTests.framework */; };
 		AEF61107F27488A5183B4CA2 /* Pods_reqres_reqresUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8621A0E3F280466F28DA20EB /* Pods_reqres_reqresUITests.framework */; };
 		C06E4FC70F21D72BFA8DA578 /* Pods_reqres.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA5435F7B3353A214DF23EDE /* Pods_reqres.framework */; };
@@ -39,11 +63,17 @@
 
 /* Begin PBXFileReference section */
 		18DBD39A517DA27BBD973162 /* Pods-reqres.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-reqres.debug.xcconfig"; path = "Target Support Files/Pods-reqres/Pods-reqres.debug.xcconfig"; sourceTree = "<group>"; };
+		2B18571C23F8240500ECEC61 /* UserListScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListScreen.swift; sourceTree = "<group>"; };
+		2B18571E23F8241000ECEC61 /* UserListComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListComponent.swift; sourceTree = "<group>"; };
+		2B18571F23F8241000ECEC61 /* UserListComponent.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = UserListComponent.storyboard; sourceTree = "<group>"; };
+		2B18572223F829FF00ECEC61 /* UserComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserComponent.swift; sourceTree = "<group>"; };
+		2B18572323F829FF00ECEC61 /* UserComponent.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = UserComponent.storyboard; sourceTree = "<group>"; };
+		2B18572623F82A0800ECEC61 /* UserScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserScreen.swift; sourceTree = "<group>"; };
+		2B18572A23F84B1800ECEC61 /* UIImagePickerController+Rx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImagePickerController+Rx.swift"; sourceTree = "<group>"; };
+		2B18572C23F85FE300ECEC61 /* Endpoint+GetUsers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Endpoint+GetUsers.swift"; sourceTree = "<group>"; };
+		2B80C4DB23F79F9200A0FCBA /* Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
 		2BAD032223F756570016D706 /* reqres.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = reqres.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2BAD032523F756570016D706 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		2BAD032723F756570016D706 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		2BAD032923F756570016D706 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		2BAD032C23F756570016D706 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2BAD032E23F756580016D706 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2BAD033123F756580016D706 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2BAD033323F756580016D706 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -53,6 +83,24 @@
 		2BAD034323F756590016D706 /* reqresUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = reqresUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2BAD034723F756590016D706 /* reqresUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = reqresUITests.swift; sourceTree = "<group>"; };
 		2BAD034923F756590016D706 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2BAD035523F757F90016D706 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		2BAD035A23F759CF0016D706 /* Routing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Routing.swift; sourceTree = "<group>"; };
+		2BAD035B23F759CF0016D706 /* Screen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Screen.swift; sourceTree = "<group>"; };
+		2BAD035E23F759F60016D706 /* LoginComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginComponent.swift; sourceTree = "<group>"; };
+		2BAD035F23F759F60016D706 /* LoginComponent.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoginComponent.storyboard; sourceTree = "<group>"; };
+		2BAD036223F760810016D706 /* LoginScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScreen.swift; sourceTree = "<group>"; };
+		2BAD036423F7610E0016D706 /* StorageProperty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageProperty.swift; sourceTree = "<group>"; };
+		2BAD036723F7612B0016D706 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		2BAD036B23F7684D0016D706 /* SignUpComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpComponent.swift; sourceTree = "<group>"; };
+		2BAD036C23F7684D0016D706 /* SignUpComponent.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignUpComponent.storyboard; sourceTree = "<group>"; };
+		2BAD036F23F76BEC0016D706 /* SignUpScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpScreen.swift; sourceTree = "<group>"; };
+		2BAD037723F76E580016D706 /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
+		2BAD037D23F76F190016D706 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
+		2BAD038223F770970016D706 /* Endpoint+Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Endpoint+Login.swift"; sourceTree = "<group>"; };
+		2BAD038423F773E40016D706 /* Endpoint+SignUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Endpoint+SignUp.swift"; sourceTree = "<group>"; };
+		2BAD038723F7754E0016D706 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
+		2BAD038923F776F00016D706 /* TopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopViewController.swift; sourceTree = "<group>"; };
+		2BAD038B23F779310016D706 /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
 		472F52B3769A6C0F67072681 /* Pods-reqresTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-reqresTests.debug.xcconfig"; path = "Target Support Files/Pods-reqresTests/Pods-reqresTests.debug.xcconfig"; sourceTree = "<group>"; };
 		807F84EF18314A21422FBB28 /* Pods-reqres-reqresUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-reqres-reqresUITests.debug.xcconfig"; path = "Target Support Files/Pods-reqres-reqresUITests/Pods-reqres-reqresUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		8621A0E3F280466F28DA20EB /* Pods_reqres_reqresUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_reqres_reqresUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -117,12 +165,15 @@
 			isa = PBXGroup;
 			children = (
 				2BAD032523F756570016D706 /* AppDelegate.swift */,
-				2BAD032723F756570016D706 /* SceneDelegate.swift */,
-				2BAD032923F756570016D706 /* ViewController.swift */,
-				2BAD032B23F756570016D706 /* Main.storyboard */,
 				2BAD032E23F756580016D706 /* Assets.xcassets */,
+				2BAD035523F757F90016D706 /* Colors.xcassets */,
 				2BAD033023F756580016D706 /* LaunchScreen.storyboard */,
 				2BAD033323F756580016D706 /* Info.plist */,
+				2BAD037423F76E200016D706 /* Networking */,
+				2BAD035823F7599E0016D706 /* Screens */,
+				2BAD035923F759A80016D706 /* Components */,
+				2BAD036623F7611F0016D706 /* Models */,
+				2BAD035723F759910016D706 /* Utilities */,
 			);
 			path = reqres;
 			sourceTree = "<group>";
@@ -145,6 +196,67 @@
 			path = reqresUITests;
 			sourceTree = "<group>";
 		};
+		2BAD035723F759910016D706 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				2B18572A23F84B1800ECEC61 /* UIImagePickerController+Rx.swift */,
+				2BAD035A23F759CF0016D706 /* Routing.swift */,
+				2BAD035B23F759CF0016D706 /* Screen.swift */,
+				2BAD036423F7610E0016D706 /* StorageProperty.swift */,
+				2BAD038723F7754E0016D706 /* Alert.swift */,
+				2BAD038923F776F00016D706 /* TopViewController.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		2BAD035823F7599E0016D706 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				2BAD036223F760810016D706 /* LoginScreen.swift */,
+				2BAD036F23F76BEC0016D706 /* SignUpScreen.swift */,
+				2B18571C23F8240500ECEC61 /* UserListScreen.swift */,
+				2B18572623F82A0800ECEC61 /* UserScreen.swift */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		2BAD035923F759A80016D706 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				2BAD035E23F759F60016D706 /* LoginComponent.swift */,
+				2BAD035F23F759F60016D706 /* LoginComponent.storyboard */,
+				2BAD036B23F7684D0016D706 /* SignUpComponent.swift */,
+				2BAD036C23F7684D0016D706 /* SignUpComponent.storyboard */,
+				2B18571E23F8241000ECEC61 /* UserListComponent.swift */,
+				2B18571F23F8241000ECEC61 /* UserListComponent.storyboard */,
+				2B18572223F829FF00ECEC61 /* UserComponent.swift */,
+				2B18572323F829FF00ECEC61 /* UserComponent.storyboard */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		2BAD036623F7611F0016D706 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				2B80C4DB23F79F9200A0FCBA /* Storage.swift */,
+				2BAD038B23F779310016D706 /* Session.swift */,
+				2BAD036723F7612B0016D706 /* User.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		2BAD037423F76E200016D706 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				2BAD037723F76E580016D706 /* Response.swift */,
+				2BAD037D23F76F190016D706 /* Endpoint.swift */,
+				2BAD038223F770970016D706 /* Endpoint+Login.swift */,
+				2BAD038423F773E40016D706 /* Endpoint+SignUp.swift */,
+				2B18572C23F85FE300ECEC61 /* Endpoint+GetUsers.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
 		4A4691ABA43BA9E544B018A5 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -155,7 +267,6 @@
 				472F52B3769A6C0F67072681 /* Pods-reqresTests.debug.xcconfig */,
 				FFF7B85E98BB0DF77A208190 /* Pods-reqresTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -278,9 +389,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2BAD036123F759F60016D706 /* LoginComponent.storyboard in Resources */,
+				2BAD035623F757F90016D706 /* Colors.xcassets in Resources */,
+				2B18572523F829FF00ECEC61 /* UserComponent.storyboard in Resources */,
 				2BAD033223F756580016D706 /* LaunchScreen.storyboard in Resources */,
 				2BAD032F23F756580016D706 /* Assets.xcassets in Resources */,
-				2BAD032D23F756570016D706 /* Main.storyboard in Resources */,
+				2BAD036E23F7684D0016D706 /* SignUpComponent.storyboard in Resources */,
+				2B18572123F8241000ECEC61 /* UserListComponent.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -408,9 +523,29 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2BAD032A23F756570016D706 /* ViewController.swift in Sources */,
+				2B18572023F8241000ECEC61 /* UserListComponent.swift in Sources */,
+				2B18571D23F8240500ECEC61 /* UserListScreen.swift in Sources */,
+				2B18572D23F85FE300ECEC61 /* Endpoint+GetUsers.swift in Sources */,
+				2BAD035C23F759CF0016D706 /* Routing.swift in Sources */,
 				2BAD032623F756570016D706 /* AppDelegate.swift in Sources */,
-				2BAD032823F756570016D706 /* SceneDelegate.swift in Sources */,
+				2B18572B23F84B1800ECEC61 /* UIImagePickerController+Rx.swift in Sources */,
+				2BAD035D23F759CF0016D706 /* Screen.swift in Sources */,
+				2BAD038823F7754E0016D706 /* Alert.swift in Sources */,
+				2BAD038A23F776F00016D706 /* TopViewController.swift in Sources */,
+				2BAD036023F759F60016D706 /* LoginComponent.swift in Sources */,
+				2BAD038523F773E40016D706 /* Endpoint+SignUp.swift in Sources */,
+				2BAD037E23F76F190016D706 /* Endpoint.swift in Sources */,
+				2BAD037023F76BEC0016D706 /* SignUpScreen.swift in Sources */,
+				2B18572723F82A0800ECEC61 /* UserScreen.swift in Sources */,
+				2BAD036D23F7684D0016D706 /* SignUpComponent.swift in Sources */,
+				2B18572423F829FF00ECEC61 /* UserComponent.swift in Sources */,
+				2BAD037823F76E580016D706 /* Response.swift in Sources */,
+				2BAD036323F760810016D706 /* LoginScreen.swift in Sources */,
+				2BAD038C23F779310016D706 /* Session.swift in Sources */,
+				2BAD038323F770970016D706 /* Endpoint+Login.swift in Sources */,
+				2BAD036523F7610E0016D706 /* StorageProperty.swift in Sources */,
+				2B80C4DC23F79F9200A0FCBA /* Storage.swift in Sources */,
+				2BAD036823F7612B0016D706 /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -446,14 +581,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		2BAD032B23F756570016D706 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				2BAD032C23F756570016D706 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		2BAD033023F756580016D706 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

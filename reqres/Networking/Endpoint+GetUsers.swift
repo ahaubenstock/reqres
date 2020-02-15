@@ -9,20 +9,29 @@
 import Foundation
 
 struct GetUsersResponse: Decodable {
-	let id: Int
-	let token: String
+	let page: Int
+	let perPage: Int
+	let total: Int
+	let totalPages: Int
+	let data: [User]
+	
+	enum CodingKeys: String, CodingKey {
+		case page
+		case perPage = "per_page"
+		case total
+		case totalPages = "total_pages"
+		case data
+	}
 }
 
 extension Endpoint where ResponseObject == GetUsersResponse {
 	static func getUsers(page: Int) -> Endpoint<ResponseObject> {
-		var request = URLRequest(url: URL(string: "\(baseURL)/register")!)
-		request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-		request.httpMethod = "POST"
-		let object = [
-			"email": email,
-			"password": password
+		var components = baseURLComponents(withPath: "users")
+		components.queryItems = [
+			URLQueryItem(name: "page", value: "\(page)")
 		]
-		request.httpBody = try! JSONSerialization.data(withJSONObject: object, options: [])
+		var request = URLRequest(url: components.url!)
+		request.httpMethod = "GET"
 		return Endpoint(request: request)
 	}
 }

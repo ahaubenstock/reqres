@@ -9,7 +9,14 @@
 import Foundation
 import RxSwift
 
-let baseURL = "https://reqres.in/api"
+func baseURLComponents(withPath path: String) -> URLComponents {
+	precondition(!path.hasPrefix("/"))
+	var urlComponents = URLComponents()
+	urlComponents.scheme = "https"
+	urlComponents.host = "reqres.in"
+	urlComponents.path = "/api/\(path)"
+	return urlComponents
+}
 
 struct APIError: LocalizedError {
 	init(message: String?) {

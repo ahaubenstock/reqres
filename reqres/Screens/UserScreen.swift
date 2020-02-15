@@ -12,8 +12,6 @@ import RxCocoa
 
 final class UserScreen: Screen {
     static func addLogic(to component: UserComponent, input: User, observer: AnyObserver<Void>) -> [Disposable] {
-		let cancel = component.cancelButton.rx.tap
-			.bind(onNext: observer.onCompleted)
 		let state = BehaviorSubject(value: State.viewing)
 		let firstName = BehaviorSubject(value: input.firstName)
 		let lastName = BehaviorSubject(value: input.lastName)
@@ -26,21 +24,41 @@ final class UserScreen: Screen {
 		let bindEditImageViewHidden = state
 			.map { $0 != .editing }
 			.bind(to: component.editImageView.rx.isHidden)
+		let bindEditImageButtonEnabled = state
+			.map { $0 == .editing }
+			.bind(to: component.editImageButton.rx.isEnabled)
 		let bindFirstNameFieldText = firstName
 			.bind(to: component.firstNameField.rx.text)
 		let bindFirstNameFieldBackgroundViewHidden = state
 			.map { $0 != .editing }
 			.bind(to: component.firstNameFieldBackgroundView.rx.isHidden)
+		let bindFirstNameFieldEnabled = state
+			.map { $0 == .editing }
+			.bind(to: component.firstNameField.rx.isEnabled)
+		let bindFirstNameFieldAlignment = state
+			.map { $0 == .editing }
+			.map { $0 ? NSTextAlignment.left : .right }
+			.bind(onNext: { [weak field = component.firstNameField] in field?.textAlignment = $0 })
 		let bindLastNameFieldText = lastName
 			.bind(to: component.lastNameField.rx.text)
 		let bindLastNameFieldBackgroundViewHidden = state
 			.map { $0 != .editing }
 			.bind(to: component.lastNameFieldBackgroundView.rx.isHidden)
+		let bindLastNameFieldEnabled = state
+			.map { $0 == .editing }
+			.bind(to: component.lastNameField.rx.isEnabled)
 		let bindEmailFieldText = email
 			.bind(to: component.emailField.rx.text)
 		let bindEmailFieldBackgroundViewHidden = state
 			.map { $0 != .editing }
 			.bind(to: component.emailFieldBackgroundView.rx.isHidden)
+		let bindEmailFieldEnabled = state
+			.map { $0 == .editing }
+			.bind(to: component.emailField.rx.isEnabled)
+		let bindEmailFieldAlignment = state
+			.map { $0 == .editing }
+			.map { $0 ? NSTextAlignment.left : .center }
+			.bind(onNext: { [weak field = component.emailField] in field?.textAlignment = $0 })
 		let bindSubmitButtonHidden = state
 			.map { $0 != .editing }
 			.bind(to: component.submitButton.rx.isHidden)
@@ -56,42 +74,62 @@ final class UserScreen: Screen {
 			.bind(to: lastName)
 		let bindEmail = component.emailField.rx.text.orEmpty
 			.bind(to: email)
-		enum ImageSource {
-			case input
-			case choose
-		}
+		let chosenImage = component.editImageButton.rx.tap
+			.flatMap(chooseImage)
+			.share()
 		let bindImage = Observable.merge(
-			Observable.just(ImageSource.input),
-			component.editImageButton.rx.tap.map { ImageSource.choose }
+			getImage(from: input.avatar).takeUntil(chosenImage),
+			chosenImage
 		)
-			.flatMapLatest { (source: ImageSource) -> Observable<UIImage> in
-				switch source {
-				case .input:
-					return getImage(from: input.avatar)
-				case .choose:
-					return chooseImage()
-				}
-		}
 		.map { Optional.some($0) }
 		.bind(to: image)
+		let upload = component.submitButton.rx.tap
+			.flatMap {
+				Observable.just(APIError(message: "update failed"))
+					.delay(.seconds(Int.random(in: 1...5)), scheduler: MainScheduler.instance)
+					.map { if Bool.random() { throw $0 } }
+					.materialize()
+		}
+		.share()
+		let bindUploadError = upload
+			.compactMap { $0.error }
+			.bind(to: errorSink)
+		let bindState = Observable.merge(
+			component.submitButton.rx.tap.map { State.waiting },
+			component.editButton.rx.tap.map { State.editing }
+		)
+			.bind(to: state)
+		let bindComplete = Observable.merge(
+			upload.filter { $0.isCompleted }.map { _ in },
+			component.cancelButton.rx.tap.asObservable()
+		)
+			.bind(onNext: observer.onCompleted)
         return [
-			cancel,
 			bindNameLabelText,
 			bindAvatarImageViewImage,
 			bindEditImageViewHidden,
+			bindEditImageButtonEnabled,
 			bindFirstNameFieldText,
 			bindFirstNameFieldBackgroundViewHidden,
+			bindFirstNameFieldEnabled,
+			bindFirstNameFieldAlignment,
 			bindLastNameFieldText,
 			bindLastNameFieldBackgroundViewHidden,
+			bindLastNameFieldEnabled,
 			bindEmailFieldText,
 			bindEmailFieldBackgroundViewHidden,
+			bindEmailFieldEnabled,
+			bindEmailFieldAlignment,
 			bindSubmitButtonHidden,
 			bindEditButtonHidden,
 			bindLoadingViewHidden,
 			bindFirstName,
 			bindLastName,
 			bindEmail,
-			bindImage
+			bindImage,
+			bindUploadError,
+			bindState,
+			bindComplete
         ]
     }
 }
@@ -105,9 +143,16 @@ private enum State {
 private func chooseImage() -> Observable<UIImage> {
 	let imagePickerController = UIImagePickerController()
 	topViewController().present(imagePickerController, animated: true, completion: nil)
-//	_ = imagePickerController.rx.didCancel
-//		.take(1)
-//		.bind(onNext: { imagePickerController.dismiss(animated: true, completion: nil) })
-	return imagePickerController.rx.didFinishPickingMediaWithInfo
-		.map { $0[.originalImage] as! UIImage }
+	return Observable.merge(
+		imagePickerController.rx.didCancel.map { Optional<UIImage>.none },
+		imagePickerController.rx.didFinishPickingMediaWithInfo
+			.map { $0[.originalImage] as? UIImage }
+	)
+		.take(1)
+		.compactMap { $0 }
+		.do(onCompleted: {
+			DispatchQueue.main.async {
+				imagePickerController.dismiss(animated: true, completion: nil)
+			}
+		})
 }

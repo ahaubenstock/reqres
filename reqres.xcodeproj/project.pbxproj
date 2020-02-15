@@ -13,8 +13,9 @@
 		2B18572423F829FF00ECEC61 /* UserComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B18572223F829FF00ECEC61 /* UserComponent.swift */; };
 		2B18572523F829FF00ECEC61 /* UserComponent.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2B18572323F829FF00ECEC61 /* UserComponent.storyboard */; };
 		2B18572723F82A0800ECEC61 /* UserScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B18572623F82A0800ECEC61 /* UserScreen.swift */; };
-		2B18572B23F84B1800ECEC61 /* UIImagePickerController+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B18572A23F84B1800ECEC61 /* UIImagePickerController+Rx.swift */; };
 		2B18572D23F85FE300ECEC61 /* Endpoint+GetUsers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B18572C23F85FE300ECEC61 /* Endpoint+GetUsers.swift */; };
+		2B18572F23F864E100ECEC61 /* UserListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B18572E23F864E100ECEC61 /* UserListCell.swift */; };
+		2B18573823F8813A00ECEC61 /* UIImagePickerController+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B18573723F8813A00ECEC61 /* UIImagePickerController+Rx.swift */; };
 		2B80C4DC23F79F9200A0FCBA /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B80C4DB23F79F9200A0FCBA /* Storage.swift */; };
 		2BAD032623F756570016D706 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BAD032523F756570016D706 /* AppDelegate.swift */; };
 		2BAD032F23F756580016D706 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2BAD032E23F756580016D706 /* Assets.xcassets */; };
@@ -69,8 +70,9 @@
 		2B18572223F829FF00ECEC61 /* UserComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserComponent.swift; sourceTree = "<group>"; };
 		2B18572323F829FF00ECEC61 /* UserComponent.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = UserComponent.storyboard; sourceTree = "<group>"; };
 		2B18572623F82A0800ECEC61 /* UserScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserScreen.swift; sourceTree = "<group>"; };
-		2B18572A23F84B1800ECEC61 /* UIImagePickerController+Rx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImagePickerController+Rx.swift"; sourceTree = "<group>"; };
 		2B18572C23F85FE300ECEC61 /* Endpoint+GetUsers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Endpoint+GetUsers.swift"; sourceTree = "<group>"; };
+		2B18572E23F864E100ECEC61 /* UserListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListCell.swift; sourceTree = "<group>"; };
+		2B18573723F8813A00ECEC61 /* UIImagePickerController+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImagePickerController+Rx.swift"; sourceTree = "<group>"; };
 		2B80C4DB23F79F9200A0FCBA /* Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
 		2BAD032223F756570016D706 /* reqres.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = reqres.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2BAD032523F756570016D706 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -139,6 +141,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2B18573223F8804100ECEC61 /* Delegate Proxy */ = {
+			isa = PBXGroup;
+			children = (
+				2B18573723F8813A00ECEC61 /* UIImagePickerController+Rx.swift */,
+			);
+			path = "Delegate Proxy";
+			sourceTree = "<group>";
+		};
 		2BAD031923F756560016D706 = {
 			isa = PBXGroup;
 			children = (
@@ -199,7 +209,7 @@
 		2BAD035723F759910016D706 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
-				2B18572A23F84B1800ECEC61 /* UIImagePickerController+Rx.swift */,
+				2B18573223F8804100ECEC61 /* Delegate Proxy */,
 				2BAD035A23F759CF0016D706 /* Routing.swift */,
 				2BAD035B23F759CF0016D706 /* Screen.swift */,
 				2BAD036423F7610E0016D706 /* StorageProperty.swift */,
@@ -229,6 +239,7 @@
 				2BAD036C23F7684D0016D706 /* SignUpComponent.storyboard */,
 				2B18571E23F8241000ECEC61 /* UserListComponent.swift */,
 				2B18571F23F8241000ECEC61 /* UserListComponent.storyboard */,
+				2B18572E23F864E100ECEC61 /* UserListCell.swift */,
 				2B18572223F829FF00ECEC61 /* UserComponent.swift */,
 				2B18572323F829FF00ECEC61 /* UserComponent.storyboard */,
 			);
@@ -523,12 +534,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2B18572F23F864E100ECEC61 /* UserListCell.swift in Sources */,
 				2B18572023F8241000ECEC61 /* UserListComponent.swift in Sources */,
 				2B18571D23F8240500ECEC61 /* UserListScreen.swift in Sources */,
 				2B18572D23F85FE300ECEC61 /* Endpoint+GetUsers.swift in Sources */,
 				2BAD035C23F759CF0016D706 /* Routing.swift in Sources */,
 				2BAD032623F756570016D706 /* AppDelegate.swift in Sources */,
-				2B18572B23F84B1800ECEC61 /* UIImagePickerController+Rx.swift in Sources */,
+				2B18573823F8813A00ECEC61 /* UIImagePickerController+Rx.swift in Sources */,
 				2BAD035D23F759CF0016D706 /* Screen.swift in Sources */,
 				2BAD038823F7754E0016D706 /* Alert.swift in Sources */,
 				2BAD038A23F776F00016D706 /* TopViewController.swift in Sources */,

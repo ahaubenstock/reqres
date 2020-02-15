@@ -22,11 +22,15 @@ protocol Screen: class {
 extension Screen {
     static func create(input: Input) -> (Component, Observable<Output>) {
         let component = UIStoryboard(name: String(describing: Self.ComponentType.self), bundle: nil).instantiateInitialViewController() as! ComponentType
-        component.loadViewIfNeeded()
         let subject = PublishSubject<Output>()
-        let disposables = addLogic(to: component, input: input, observer: subject.asObserver())
+		let disposables = component.rx.methodInvoked(#selector(UIViewController.viewWillAppear(_:)))
+			.take(1)
+			.map { [unowned component] _ in
+				addLogic(to: component, input: input, observer: subject.asObserver())
+			}
         _ = component.rx.deallocated
-            .bind(onNext: { disposables.forEach { $0.dispose() } })
+			.withLatestFrom(disposables)
+            .bind(onNext: { $0.forEach { $0.dispose() } })
         _ = subject
             .materialize()
             .filter { $0.isCompleted }

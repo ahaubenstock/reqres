@@ -34,7 +34,7 @@ final class LoginScreen: Screen {
 			.map { Session(token: $0) }
 			.bind(to: store.session)
 		let enter = store.session
-			.compactMap { $0 }
+			.filter { $0 != nil }
 			.map { _ in }
 			.bind(onNext: route(to: UserListScreen.self, from: component))
         return [

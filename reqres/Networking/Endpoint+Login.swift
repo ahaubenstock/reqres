@@ -14,7 +14,8 @@ struct LoginResponse: Decodable {
 
 extension Endpoint where ResponseObject == LoginResponse {
 	static func login(email: String, password: String) -> Endpoint<ResponseObject> {
-		var request = URLRequest(url: URL(string: "\(baseURL)/login")!)
+		let url = baseURLComponents(withPath: "users").url!
+		var request = URLRequest(url: url)
 		request.addValue("application/json", forHTTPHeaderField: "Content-Type")
 		request.httpMethod = "POST"
 		let object = [
